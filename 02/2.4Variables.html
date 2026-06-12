@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<title>Variables Examples</title>
+    <body>
+            <h1>JavaScript Variables</h1>
+        <script>
+
+        //Variables
+       //Var 
+
+var age = 20;
+var num2 = 30;
+var num3 = 40;
+console.log(num2 + num3); 
+console.log(age);
+
+//var -> Globel
+if(true){
+    var age = 30;
+console.log(age);
+}
+
+//Let
+if(true){
+    let a = 20;
+    console.log(a);
+}
+
+//const 
+//const -> local
+//const -> values re-assign not allowed
+
+ const age1 = 20;
+ console.log(age1 + 10);
+   </script>
+    </body>
+</html>
+
+
+//Revision
+
+ //var -> global
+ //Khi bhi assign kr sakte hai
+ //Re-assign allowed
+
+ //let -> local
+ //Re-assign allowed
+ //Acces sirf khud ky block me hota hai
+
+ //const -> local
+//Re-assign not allowed
+//Acces sirf khud ky block me hota hai
+
+
+//For Out put on web page
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>JavaScript Variables</h1>
+
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <p id="result5"></p>
+
+    <script>
+        var age = 20;
+
+        var num2 = 30;
+        var num3 = 40;
+
+        document.getElementById("result1").innerHTML =
+            "num2 + num3 = " + (num2 + num3);
+
+        document.getElementById("result2").innerHTML =
+            "Age = " + age;
+
+        if (true) {
+            var age = 30;
+            document.getElementById("result3").innerHTML =
+                "Age inside var block = " + age;
+        }
+
+        if (true) {
+            let a = 20;
+            document.getElementById("result4").innerHTML =
+                "Value of let a = " + a;
+        }
+
+        const age1 = 20;
+        document.getElementById("result5").innerHTML =
+            "age1 + 10 = " + (age1 + 10);
+    </script>
+
+</body>
+</html>
+
+
+//Task 1...
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    // Task 1
+
+    let name, admin;
+
+    name = "John";
+    admin = name;
+
+    alert(admin);
+</script>
+
+</body>
+</html>
+
+//Task 2...
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // Task 2
+
+            let planetEarth = "Earth";
+            let currentUserName = "John";
+            alert(planetEarth);
+            alert(currentUserName);
+        </script>
+    </body>
+</html>
