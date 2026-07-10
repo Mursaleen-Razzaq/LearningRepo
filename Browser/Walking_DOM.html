@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking DOM</title>
+</head>
+<body>
+<script>
+
+  for (let prop in document.body.childNodes) 
+   console.log(prop);
+
+   
+     for (let node of document.body.childNodes) {
+  console.log(node);
+ // shows all nodes from the collection
+   }
+</script>
+    
+   <h1>Walking DOM</h1>
+    <p>Why Walk the DOM? <br>
+        1. Find parent, child, or sibling elements. <br>
+        2. Traverse the HTML structure. <br>
+        3. Modify or style related elements. <br>
+        4. Handle events on nearby elements. <br>
+        In short, walking the DOM is the process of moving through the DOM tree using properties like parentElement, children, firstElementChild, lastElementChild, nextElementSibling, and previousElementSibling.
+</p>
+
+<style>
+    body {
+      background-color: lightblue;
+    }
+  </style>
+  
+</body>
+</html>
