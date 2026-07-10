@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modifying the Document</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .card {
+      border: 6px solid #333;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 20px;
+      min-height: 50px;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #212221;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>DOM Manipulation Example</h1>
+
+<div id="container" class="card">
+  <p id="paragraph">Learning JavaScript DOM.</p>
+</div>
+
+<button id="btn">Modify Document</button>
+
+<script src="Modifying_document.js"></script>
+
+</body>
+</html>
