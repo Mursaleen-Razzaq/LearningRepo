@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Events Example</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#414141;
+    color:white;
+    text-align:center;
+}
+
+#parent{
+    width:350px;
+    height:250px;
+    background:skyblue;
+    margin:40px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#child{
+    width:150px;
+    height:100px;
+    background:orange;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+}
+
+#output{
+    width:350px;
+    margin:20px auto;
+    background:white;
+    color:black;
+    padding:15px;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Mouse Movement Events</h2>
+
+<div id="parent">
+    <div id="child">
+        Child Box
+    </div>
+</div>
+
+<div id="output">
+    Move your mouse...
+</div>
+
+<script>
+
+const parent = document.getElementById("parent");
+const output = document.getElementById("output");
+
+// mouseover
+parent.addEventListener("mouseover", function () {
+    output.innerHTML = "🟢 mouseover";
+});
+
+// mouseout
+parent.addEventListener("mouseout", function () {
+    output.innerHTML = "🔴 mouseout";
+});
+
+// mouseenter
+parent.addEventListener("mouseenter", function () {
+    console.log("mouseenter fired");
+});
+
+// mouseleave
+parent.addEventListener("mouseleave", function () {
+    console.log("mouseleave fired");
+});
+
+</script>
+
+</body>
+</html>
