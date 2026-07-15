@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to Browser Events</title>
+</head>
+<body>
+
+<h2>Introduction to Browser Events</h2>
+
+<img id="photoshop" src="Mursaleen.jpeg" width="200">
+
+<script>
+const image = document.getElementById("photoshop");
+
+// Method 1
+image.onclick = function () {
+    alert("Picture Clicked!");
+};
+   
+   const images = document.getElementById("photoshop");
+
+image.addEventListener("click", function () {
+    alert("Image Clicked");
+});
+
+image.addEventListener("mouseenter", function () {
+    image.style.border = "5px solid red";
+});
+
+// Method 2 (Recommended)
+// image.addEventListener("click", function () {
+//     alert("Picture Clicked!");
+// });
+
+</script>
+
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="image" src="image.jpeg" alt="photoshop"></li>
+             <li><img width="200px" id="photoshop" src="Mursaleen.jpeg" alt="photoshop"></li>
+            <li> <a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('photoshop').onclick = function() {
+    //     alert("Picture clicked!")
+    // }
+
+    //attachEvent
+    //iQuery - on
+    // document.getElementById('photoshop').addEventListener('click', function(){
+    //     alert("Picture clicked again");
+    // })
+
+    //Events...
+    // document.getElementById('photoshop').addEventListener('click', function(e){
+    //     console.log(e);
+    // }, false);
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('Click inside the ul');
+    // }, false);
+
+    // document.getElementById('photoshop').addEventListener('click', function(e){
+    //     console.log("photo clicked");
+    //     e.stopPropagation()
+    // }, false);
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked!");
+    // }, false)
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+</script>
+</html> -->
