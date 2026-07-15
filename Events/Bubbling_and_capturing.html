@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling and capturing</title>
+    <style>
+        body{
+            background:#414141;
+            color:white;
+        }
+
+        #parent{
+            padding:40px;
+            border:2px solid white;
+        }
+
+        #child{
+            padding:40px;
+            border:2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+
+    Parent
+
+    <div id="child">
+        Child
+    </div>
+
+</div>
+    <div>
+        <button style="color: white; 
+        border-radius: 8px; padding: 6px; 
+        background-color: green; 
+        margin-top: 6%;
+         margin-left: 6%;">click me</button>
+    </div>
+</body>
+<script src="Bubbling_and_capturing.js"></script>
+</html>
