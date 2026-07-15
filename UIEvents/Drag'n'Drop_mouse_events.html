@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag and Drop Example</title>
+    <style>
+        #ball {
+            width: 80px;
+            height: 80px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ball"></div>
+
+<script>
+let ball = document.getElementById("ball");
+
+ball.onmousedown = function(event) {
+
+    // Distance between mouse and ball's top-left corner
+    let shiftX = event.clientX - ball.getBoundingClientRect().left;
+    let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+        ball.style.left = pageX - shiftX + "px";
+        ball.style.top = pageY - shiftY + "px";
+    }
+
+    moveAt(event.pageX, event.pageY);
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+
+    ball.onmouseup = function() {
+        document.removeEventListener("mousemove", onMouseMove);
+        ball.onmouseup = null;
+    };
+};
+
+ball.ondragstart = function() {
+    return false;
+};
+</script>
+
+</body>
+</html>
