@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Event</title>
+</head>
+<body>
+
+<button style="background-color: aqua; 
+margin-top: 18px; margin-left: 18px; 
+color: black; padding: 1%; 
+border-color: green; 
+border-radius: 8px;" id="btn">Send User Data</button>
+
+<p style="border: 3%; 
+background-color: aliceblue; 
+color: black; " id="output"></p>
+
+<script>
+
+const button = document.getElementById("btn");
+const output = document.getElementById("output");
+
+// Listen for custom event
+document.addEventListener("userLogin", function (event) {
+
+    output.innerHTML = `
+        Name: ${event.detail.name}<br>
+        Age: ${event.detail.age}
+    `;
+
+});
+
+// Fire custom event
+button.addEventListener("click", function () {
+
+    const loginEvent = new CustomEvent("userLogin", {
+
+        detail: {
+            name: "Mursaleen",
+            age: 22
+        }
+
+    });
+
+    document.dispatchEvent(loginEvent);
+
+});
+
+</script>
+
+</body>
+</html>
