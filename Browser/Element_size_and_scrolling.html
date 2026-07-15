@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Size and Scrolling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        /* First Box */
+        #box1 {
+            width: 300px;
+            height: 300px;
+            border: 5px solid lightblue;
+            border-radius: 10px;
+            background-image: url("Mursaleen.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* Second Box */
+        #box2 {
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 12px;
+    overflow: auto;
+    border: none;
+    background: linear-gradient(135deg, #6dd5fa, #2980b9);
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+       button {
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+   button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+  button:active {
+    transform: translateY(1px);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Website</h1>
+
+    <div class="container">
+
+        <!-- First Box -->
+        <div id="box1">
+            <h2>MURSALEEN RAZZAQ</h2>
+        </div>
+
+        <!-- Second Box -->
+        <div id="box2">
+            <h2>1. Professional Introduction</h2>
+            My name is Mursaleen Razzaq. I am passionate about technology and continuously improving my skills in web development and programming. I have experience working with HTML, CSS, JavaScript, and Python, and I enjoy building practical and user-friendly applications.
+            <br><br>
+            I am a dedicated, hardworking, and quick learner who is always eager to take on new challenges. My goal is to grow as a software developer and contribute to innovative projects.
+            <br><br>
+            <h3>2. Student Introduction</h3>
+            My name is Mursaleen Razzaq, and I am a student with a strong interest in computer science and web development. I enjoy learning new programming languages and creating websites using HTML, CSS, and JavaScript.
+            <br><br>
+            I am enthusiastic, hardworking, and always willing to learn new skills. I enjoy solving coding problems and improving my technical knowledge. My aim is to build a successful career in software development.
+            <br><br>
+            <h4>3. Interview Introduction</h4>
+            Good morning/afternoon. My name is Mursaleen Razzaq. I have a keen interest in web development and programming, with knowledge of HTML, CSS, JavaScript, and Python. I enjoy learning new technologies, solving problems, and working on real-world projects that enhance my skills.
+            <br><br>
+            I am a dedicated and adaptable person who works well both independently and as part of a team. I am excited to apply my knowledge, continue learning, and contribute positively to your organization.
+        </div>
+
+    </div>
+
+    <button onclick="scrollBox()">Scroll Down</button>
+
+    <script>
+        // Element Size
+        const box1 = document.getElementById("box1");
+
+        console.log("clientWidth:", box1.clientWidth);
+        console.log("clientHeight:", box1.clientHeight);
+
+        console.log("offsetWidth:", box1.offsetWidth);
+        console.log("offsetHeight:", box1.offsetHeight);
+
+        console.log("scrollWidth:", box1.scrollWidth);
+        console.log("scrollHeight:", box1.scrollHeight);
+
+        // Scroll Function
+        function scrollBox() {
+            const box2 = document.getElementById("box2");
+
+            box2.scrollTop += 50;
+
+            console.log("scrollTop:", box2.scrollTop);
+            console.log("scrollHeight:", box2.scrollHeight);
+        }
+    </script>
+
+</body>
+</html>
