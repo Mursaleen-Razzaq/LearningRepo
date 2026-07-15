@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus and Blur Example</title>
+</head>
+<body>
+
+<h2>Focus and Blur</h2>
+
+<button
+    style="background-color: blue; color: white; border-radius: 9px; padding: .5%;"
+    type="button"
+    id="openbtn">
+    Open Window
+</button>
+
+<button
+    style="background-color: blue; color: white; border-radius: 9px; padding: .5%;"
+    type="button"
+    id="focusbtn">
+    Focus
+</button>
+
+<button
+    style="background-color: blue; color: white; border-radius: 9px; padding: .5%;"
+    type="button"
+    id="blurbtn">
+    Blur
+</button>
+
+<script>
+
+let newWindow = null;
+
+function openWin() {
+    newWindow = window.open("", "_blank", "width=300,height=200");
+
+    if (newWindow) {
+        newWindow.document.write("<h2>This is a new window</h2>");
+    } else {
+        alert("Popup blocked by the browser.");
+    }
+}
+
+function focusWin() {
+    if (newWindow && !newWindow.closed) {
+        newWindow.focus();
+    } else {
+        alert("Please open the window first.");
+    }
+}
+
+function blurWin() {
+    if (newWindow && !newWindow.closed) {
+        newWindow.blur();
+    } else {
+        alert("Please open the window first.");
+    }
+}
+
+document.getElementById("openbtn").addEventListener("click", openWin);
+document.getElementById("focusbtn").addEventListener("click", focusWin);
+document.getElementById("blurbtn").addEventListener("click", blurWin);
+
+</script>
+
+</body>
+</html>
