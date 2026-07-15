@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pointer Events Drag & Drop</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: #f4f4f4;
+    }
+
+    #box {
+        width: 100px;
+        height: 100px;
+        background: dodgerblue;
+        border-radius: 10px;
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        cursor: grab;
+
+        /* Prevent scrolling while dragging on touch devices */
+        touch-action: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="box">Drag, Move</div>
+
+<script>
+const box = document.getElementById("box");
+
+box.addEventListener("pointerdown", pointerDown);
+
+function pointerDown(event) {
+
+    // Prevent text selection or default touch behavior
+    event.preventDefault();
+
+    // Keep receiving pointer events even if the pointer leaves the box
+    box.setPointerCapture(event.pointerId);
+
+    const shiftX = event.clientX - box.getBoundingClientRect().left;
+    const shiftY = event.clientY - box.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+        box.style.left = pageX - shiftX + "px";
+        box.style.top = pageY - shiftY + "px";
+    }
+
+    // Initial position
+    moveAt(event.pageX, event.pageY);
+
+    function pointerMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    function pointerUp(event) {
+        box.releasePointerCapture(event.pointerId);
+
+        box.removeEventListener("pointermove", pointerMove);
+        box.removeEventListener("pointerup", pointerUp);
+    }
+
+    box.addEventListener("pointermove", pointerMove);
+    box.addEventListener("pointerup", pointerUp);
+}
+</script>
+
+</body>
+</html>
