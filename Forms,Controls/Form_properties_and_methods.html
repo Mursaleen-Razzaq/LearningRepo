@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        body{
+            font-family:tahoma;
+            background-color:aqua;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        #myForm{
+            width:250px;
+            margin:100px auto;
+            border:2px solid black;
+            border-radius:15px;
+            padding:25px;
+            background:rgba(0,0,0,.5);
+            color:white;
+        }
+
+        input{
+            width:220px;
+            padding:8px;
+            margin-top:5px;
+        }
+
+        button{
+            background-color: blueviolet;
+            color: white;
+            border-radius: 7px;
+            padding:8px 15px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Form Properties</h1>
+
+<form id="myForm">
+
+    Name:
+    <input style="background-color: white; 
+    color: black; border-color: white; border-radius: 8px;" type="text" name="username"><br><br>
+
+    Email:
+    <input style="background-color: white; 
+    color: black; border-color: white; border-radius: 8px;" type="email" name="email"><br><br>
+
+    <input style="background-color: white; 
+    color: black; border-color: white; border-radius: 8px;" type="submit">
+
+</form>
+
+<center>
+<button onclick="showFormInfo()">Show Form Properties</button>
+<button onclick="resetForm()">Reset Form</button>
+</center>
+
+<script src="Form_properties_and_methods.js"></script>
+
+</body>
+</html>
