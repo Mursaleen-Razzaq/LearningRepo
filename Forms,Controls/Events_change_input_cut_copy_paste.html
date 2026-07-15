@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Events Demo</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:40px;
+    }
+
+    section{
+        margin-bottom:40px;
+        padding:20px;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    input{
+        width:300px;
+        padding:10px;
+        font-size:16px;
+    }
+
+    p{
+        color:blue;
+        font-weight:bold;
+    }
+
+    h2{
+        color:#333;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>JavaScript Events</h1>
+
+
+<!-- INPUT EVENT -->
+
+
+<section>
+
+<h2>1. Input Event</h2>
+
+<p>
+The <b>input</b> event fires every time the value changes.
+It works while typing, deleting, cutting, or pasting.
+</p>
+
+<input
+type="text"
+id="inputBox"
+placeholder="Start typing...">
+
+<p id="inputResult"></p>
+
+</section>
+
+
+
+<!-- CHANGE EVENT -->
+
+
+<section>
+
+<h2>2. Change Event</h2>
+
+<p>
+The <b>change</b> event fires only after the value changes
+and the input loses focus.
+</p>
+
+<input
+type="text"
+id="changeBox"
+placeholder="Type then click outside">
+
+<p id="changeResult"></p>
+
+</section>
+
+
+<!-- COPY EVENT -->
+
+
+<section>
+
+<h2>3. Copy Event</h2>
+
+<p>
+Select the text below and press <b>Ctrl + C</b>.
+</p>
+
+<input
+type="text"
+id="copyBox"
+value="Learn JavaScript Events">
+
+<p id="copyResult"></p>
+
+</section>
+
+
+<!-- CUT EVENT -->
+
+
+<section>
+
+<h2>4. Cut Event</h2>
+
+<p>
+Select the text and press <b>Ctrl + X</b>.
+</p>
+
+<input
+type="text"
+id="cutBox"
+value="Cut this text">
+
+<p id="cutResult"></p>
+
+</section>
+
+
+<!-- PASTE EVENT -->
+
+
+<section>
+
+<h2>5. Paste Event</h2>
+
+<p>
+Copy something and paste it inside the textbox.
+</p>
+
+<input
+type="text"
+id="pasteBox"
+placeholder="Paste here">
+
+<p id="pasteResult"></p>
+
+</section>
+
+<script>
+
+
+    // INPUT EVENT
+
+
+const inputBox = document.getElementById("inputBox");
+const inputResult = document.getElementById("inputResult");
+
+// Fires every time the user changes the value
+inputBox.addEventListener("input", function(){
+
+    inputResult.innerHTML =
+    "Current Value : " + inputBox.value;
+
+});
+
+
+
+    // CHANGE EVENT
+
+
+const changeBox = document.getElementById("changeBox");
+const changeResult = document.getElementById("changeResult");
+
+// Fires after editing is complete and focus leaves the input
+changeBox.addEventListener("change", function(){
+
+    changeResult.innerHTML =
+    "Final Value : " + changeBox.value;
+
+});
+
+
+// COPY EVENT
+
+
+const copyBox = document.getElementById("copyBox");
+const copyResult = document.getElementById("copyResult");
+
+// Fires when user copies selected text
+copyBox.addEventListener("copy", function(){
+
+    copyResult.innerHTML =
+    "Text Copied Successfully";
+
+});
+
+
+    // CUT EVENT
+
+const cutBox = document.getElementById("cutBox");
+const cutResult = document.getElementById("cutResult");
+
+// Fires when user cuts selected text
+cutBox.addEventListener("cut", function(){
+
+    cutResult.innerHTML =
+    "Text Cut Successfully";
+
+});
+
+
+    // PASTE EVENT
+
+const pasteBox = document.getElementById("pasteBox");
+const pasteResult = document.getElementById("pasteResult");
+
+// Fires when user pastes text
+pasteBox.addEventListener("paste", function(){
+
+    pasteResult.innerHTML =
+    "Text Pasted Successfully";
+
+});
+
+</script>
+
+</body>
+</html>
