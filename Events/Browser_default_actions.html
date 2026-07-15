@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser default actions</title>
+    <style>
+        body{
+            background:#414141;
+            color:white;
+        }
+
+        a{
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="https://www.google.com" id="google">
+    Open Google
+</a>
+  
+   <script>
+    document.getElementById("google").addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    alert("Google Link Blocked!");
+
+});
+   </script>
+</body>
+</html>
