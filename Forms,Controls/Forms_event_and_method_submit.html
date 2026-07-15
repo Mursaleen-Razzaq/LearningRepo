@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Event and submit() Method</title>
+
+<style>
+    body{
+        font-family: Arial;
+        margin:40px;
+    }
+
+    form{
+        margin-bottom:20px;
+    }
+
+    input{
+        padding:8px;
+        width:250px;
+    }
+
+    button{
+        padding:8px 15px;
+        margin-top:10px;
+        cursor:pointer;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>JavaScript Form Submit Event & submit() Method</h1>
+
+
+<form id="myForm">
+
+    <label>Name:</label><br>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter your name">
+
+    <br><br>
+
+    <!-- Clicking this button triggers the submit event -->
+    <button type="submit">
+        Submit Form
+    </button>
+
+</form>
+
+<!-- This button submits the form using JavaScript -->
+<button id="submitBtn">
+    Submit Using submit() Method
+</button>
+
+<hr>
+
+<p id="message"></p>
+
+<script>
+
+
+
+const form = document.getElementById("myForm");
+const message = document.getElementById("message");
+const submitBtn = document.getElementById("submitBtn");
+
+
+
+/*
+This event runs whenever the user submits the form
+by clicking the Submit button or pressing Enter.
+*/
+
+form.addEventListener("submit", function(event){
+
+    // Stop the page from refreshing
+    event.preventDefault();
+
+    const name = document.getElementById("username").value;
+
+    // Validate input
+    if(name === "")
+    {
+        message.innerHTML = "❌ Please enter your name.";
+        message.style.color = "red";
+    }
+    else
+    {
+        message.innerHTML = "✅ Welcome, " + name;
+        message.style.color = "green";
+    }
+
+});
+
+
+
+/*
+This button submits the form using JavaScript.
+*/
+
+submitBtn.addEventListener("click", function(){
+
+    const name = document.getElementById("username").value;
+
+    if(name === "")
+    {
+        alert("Please enter your name first.");
+        return;
+    }
+
+    alert("Calling form.submit()...");
+
+    /*
+       In a real application, the following line
+       submits the form directly.
+
+       Since this demo has no action attribute,
+       it is commented out.
+
+       Uncomment it to test.
+
+       form.submit();
+    */
+
+});
+
+</script>
+
+</body>
+</html>
