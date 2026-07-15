@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div#text {
+            font-family: arial;
+            font-size: 1.5em;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">
+        <h1>Scroll Event</h1>
+        <h1>Introduction</h1>
+        <p>
+            My name is <strong>Mursaleen Razzaq.</strong>Mursaleen Razzaq. I am a dedicated, responsible, and hardworking individual who enjoys learning new things and improving my skills. I believe that honesty, discipline, and determination are the keys to success. I always try to stay positive and give my best effort in everything I do.
+        </p>
+        <h1>Skills and Interests</h1>
+        <p>
+            I enjoy gaining new knowledge and taking on challenges that help me grow personally and professionally. I like working with others, solving problems, and continuously developing my abilities. I believe that every experience is an opportunity to learn and become a better person.
+        </p>
+        <h1>Hobbies</h1>
+        <p>
+            In my free time, I enjoy spending time with my family and friends, exploring new technologies, and learning about topics that interest me. I also like improving my communication and practical skills because I believe they are important for achieving success in life.
+        </p>
+        <h1>Future Goals</h1>
+        <p>
+            My goal is to build a successful career, continue learning throughout my life, and make a positive contribution to my community. I am committed to working hard, staying focused on my goals, and making the most of every opportunity that comes my way.
+        </p>
+        <h1>Hobbies</h1>
+        <p>
+            In my free time, I enjoy spending time with my family and friends, exploring new technologies, and learning about topics that interest me. I also like improving my communication and practical skills because I believe they are important for achieving success in life.
+        </p>
+        <h1>Future Goals</h1>
+        <p>
+            My goal is to build a successful career, continue learning throughout my life, and make a positive contribution to my community. I am committed to working hard, staying focused on my goals, and making the most of every opportunity that comes my way.
+        </p>
+    </div>
+
+    <!-- <script type="text/javascript">
+        window.addEventListener('wheel', 
+        function(event) {
+            if(event.deltaY < 0){
+                console.log('scrolling Up..');
+            }else if (event.deltaY > 0){
+                 console.log('scrolling Down..');
+            }
+        }) 
+    </script> -->
+    <script type="text/javascript">
+        window.addEventListener('scroll', 
+        function() {
+            if(window.pageYOffset > 400){
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                // console.log('Over 400px..');
+            }else{
+                 document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            }
+        }) 
+    </script>
+</body>
+</html>
