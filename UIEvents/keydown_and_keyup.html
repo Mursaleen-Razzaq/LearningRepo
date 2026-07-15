@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: tahoma;
+        background-color: aqua;
+        background-size: 500%;
+        background-position: -1600px -400px;
+    }
+    #form {
+        width: 250px;
+        margin: 100px auto 0 auto;
+        border: 2px solid #000;
+        border-radius: 15px;
+        padding: 25px;
+        background-color: rgba(0, 0, 0, .5);
+        color: #fff;
+        box-shadow: -2px 2px 15px #000;
+    }
+    p,input {
+        font-size: 20px;
+    }
+    input {
+        width: 225px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 8px;
+        background-color: #fff;
+        box-shadow: inset -2px 2px 10px #000;
+    }
+
+</style>
+<body>
+    <div id="form">
+        <h1 id="h1">Keyboard Event</h1>
+        <p>onKeydown</p>
+        <input type="text" onkeydown=" alert(this.value);">
+        <!-- <input type="text" onkeydown=" document.getElementById('form').style.background=this.value"> -->
+
+
+        <p>onKeyup</p>
+        <!-- <input type="text" onkeyup="alert(this.value);"> -->
+        <input type="text" onkeyup="document.getElementById('form').style.background=this.value">
+
+
+        <p>onKeypress</p>
+        <input type="text" onkeypress="document.getElementById('form').style.background=this.value">
+        <!-- <input type="text" onkeypress=alert(this.value);"> -->
+    </div>
+</body>
+</html>
